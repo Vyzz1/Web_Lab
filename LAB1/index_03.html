@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table input[type="date"],
+        input[type="time"],
+        textarea,
+        select {
+            width: 100% !important;
+        }
+
+        optgroup[label] {
+            color: #ccc;
+        }
+
+
+        optgroup option {
+            color: #000
+        }
+
+        body {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <form method="post" action="https://web-503073.herokuapp.com/lab01/register.php">
+
+                <tr>
+                    <td><label for="name"> Your Name </label></td>
+                    <td><input type="text" placeholder="Your name" id="name" name="name" /></td>
+                </tr>
+                <tr>
+                    <td><label for="email"> Email Address</label></td>
+                    <td><input type="email" placeholder="email@domain.com" id="email" name="email" /></td>
+                </tr>
+                <tr>
+                    <td><label for="birthday"> Birthday </label></td>
+                    <td><input type="date" name="birthday" id="birthday" /></td>
+                </tr>
+
+                <tr>
+                    <td><label for="checkbox"> Birthtime </label></td>
+                    <td><input type="time" /></td>
+                </tr>
+                <tr>
+                    <td> <label>Gender</label></td>
+                    <td>
+                        <input type="radio" name="gender" value="male" id="male"> <label for="male">Male</label>
+                        <input type="radio" name="gender" value="female" id="female"> <label for="female">Female</label>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label for="country">From</label></td>
+                    <td>
+                        <select name="country" id="country">
+                            <option disabled selected>Please select a country</option>
+                            <optgroup label="Asia">
+                                <option value="Vietnam">Vietnam</option>
+                                <option value="Laos">Laos</option>
+                                <option value="Cambodia">Cambodia</option>
+                                <option value="Singapore">Singapore</option>
+                            </optgroup>
+                            <optgroup label="Europe">
+                                <option value="France">France</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Finland">Finland</option>
+                                <option value="Ireland">Ireland</option>
+                            </optgroup>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label for="country">Favortie IDE</label></td>
+                    <td>
+                        <input id="vs" type="checkbox" name="favorite_ide" value="Visual Studio Code" />
+                        <label for="vs">Visual Studio Code</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>
+                        <input id="sub" type="checkbox" name="favorite_ide" value="Sublime Text" />
+                        <label for="sub">Sublime Text</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>
+                        <input id="es" type="checkbox" name="favorite_ide" value="Esclipse" />
+                        <label for="es">Esclipse</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>
+                        <input id="atom" type="checkbox" name="favorite_ide" value="Atom" />
+                        <label for="atom">Atom</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>
+                        <input id="intetlij" type="checkbox" name="favorite_ide" value="Intelij Idea" />
+                        <label for="intetlij">Intelij Idea</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="toiec">TOIEC Score</label></td>
+                    <td><input id="toiec" type="range" min="5" max="990" step="5" name="toeic" /></td>
+                </tr>
+                <tr>
+                    <td><label for="message">Message</label></td>
+                    <td> <textarea name="message" id="message"></textarea> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit"> Register</button>
+                        <button type="reset"> Again</button>
+                    </td>
+
+                </tr>
+
+            </form>
+
+
+        </tbody>
+    </table>
+</body>
+
+</html>

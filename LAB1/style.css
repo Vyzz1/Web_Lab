@@ -1,0 +1,41 @@
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-collapse:collapse ;
+}
+.col{
+    border: 4px double #ccc;
+    width: 30% !important;
+
+}
+.col .job{
+    font-size: 18px;
+}
+.img{
+   overflow: hidden;
+    aspect-ratio: 4/3;
+ 
+    
+}
+.img img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+}
+.info{
+    margin: 20px 20px;
+}
+@media (max-width: 767.98px){
+    .row{
+        display: block;
+    }
+    .col{
+        margin: 15px auto;
+        width: 100% !important;
+    }
+}
+.sub,ul,ol,.language{
+    font-size: 18px;
+}
