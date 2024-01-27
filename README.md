@@ -1,4 +1,4 @@
-# ĐÂY LÀ REBO VỀ CÁC BÀI LAB CỦA TÔI MÔN LTWVUD
+# ĐÂY LÀ REPO VỀ CÁC BÀI LAB CỦA TÔI MÔN LTWVUD
 
 ---
 
