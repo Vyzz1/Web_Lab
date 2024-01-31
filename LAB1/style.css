@@ -1,3 +1,16 @@
+.header{
+    text-align: center;
+    margin: 35px;
+}
+.title{
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.desc{
+    font-size: 18px;
+    font-weight: 500;
+}
 .row{
     display: flex;
     justify-content: center;
@@ -15,7 +28,8 @@
 .img{
    overflow: hidden;
     aspect-ratio: 4/3;
- 
+    width: 100%;
+   
     
 }
 .img img{
