@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+table tr td {
+    border: 1px solid #ccc;
+    text-align: center;
+    border-collapse: separate;
+
+}
+
+
+.empty {
+    background: #D0D0D0;
+
+}
+
+.lunch {
+    background: #B6EA60;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.lab {
+    background: #FBE288;
+}
+
+tr td {
+    padding: 8px 12px;
+}
+
+.date {
+    color: #4D3AC1;
+    font-weight: 700;
+}

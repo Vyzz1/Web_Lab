@@ -1,0 +1,19 @@
+table input[type="date"],
+input[type="time"],
+textarea,
+select {
+    width: 100% !important;
+}
+
+optgroup[label] {
+    color: #ccc;
+}
+
+
+optgroup option {
+    color: #000
+}
+
+body {
+    text-align: left;
+}

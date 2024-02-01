@@ -1,0 +1,30 @@
+body {
+    font-size: 18px;
+}
+
+.label {
+    margin-right: 15px;
+}
+
+.input {
+    margin-right: 20px;
+}
+
+
+input::placeholder {
+    font-size: 15px;
+}
+
+.form_section {
+    display: flex;
+
+}
+
+.end_section {
+    margin-left: 100px;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 8px;
+}
