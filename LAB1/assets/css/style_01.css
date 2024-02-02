@@ -4,8 +4,14 @@ body {
     align-items: center;
     flex-direction: column;
 }
-
-table tr td {
+.title{
+    color: #4D3AC1;
+}
+table {
+    border-collapse: separate;
+    border: 1px solid #ccc; /* Thêm đường viền cho bảng */
+}
+table tr td,th {
     border: 1px solid #ccc;
     text-align: center;
     border-collapse: separate;
@@ -29,7 +35,7 @@ table tr td {
 }
 
 tr td {
-    padding: 8px 12px;
+    padding: 10px 12px;
 }
 
 .date {

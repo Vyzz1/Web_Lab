@@ -41,15 +41,7 @@
 .info{
     margin: 20px 20px;
 }
-@media (max-width: 767.98px){
-    .row{
-        display: block;
-    }
-    .col{
-        margin: 15px auto;
-        width: 100% !important;
-    }
-}
+
 .sub,ul,ol,.language{
     font-size: 18px;
 }

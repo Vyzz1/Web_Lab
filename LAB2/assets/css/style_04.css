@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background:#DBDBDB ;
+    display: flex;
+    justify-content: center;
+    align-items: center;        
+}
+#chat{
+    background: #FFFFFF;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.hoder{
+    position: relative;
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.hoder .content{
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: background  0.3ms ease-in-out;
+}
+.hoder:not(.me)>.content{
+  
+    background:#E4E4E9;
+    
+    padding: 8px 10px;
+    display:flex;
+    max-width: 45%;
+    justify-content:flex-start;
+    margin: 5px 0;
+}
+.hoder.me {
+   
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hoder.me .content{
+    background: #01BE40;
+    color: #FFFFFF;
+    max-width: 45%;
+    margin: 5px 0;
+
+    padding: 8px 10px;
+
+}
+.hoder > .content:hover{
+   filter: brightness(0.9);
+}

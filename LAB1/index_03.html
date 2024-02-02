@@ -27,8 +27,8 @@
                 </tr>
 
                 <tr>
-                    <td><label for="checkbox"> Birthtime </label></td>
-                    <td><input type="time" /></td>
+                    <td><label for="birthtime"> Birthtime </label></td>
+                    <td><input id="birthtime" type="time" /></td>
                 </tr>
                 <tr>
                     <td> <label>Gender</label></td>
@@ -61,37 +61,38 @@
                     </td>
                 </tr>
                 <tr>
-                    <td> <label for="country">Favortie IDE</label></td>
+                    <td> <label>Favortie IDE</label></td>
                     <td>
-                        <input id="vs" type="checkbox" name="favorite_ide" value="Visual Studio Code" />
+                        <input id="vs" type="checkbox" name="favorite_ide[]" value="Visual Studio Code" />
                         <label for="vs">Visual Studio Code</label>
                     </td>
                 </tr>
                 <tr>
                     <td> </td>
                     <td>
-                        <input id="sub" type="checkbox" name="favorite_ide" value="Sublime Text" />
+                        <input id="sub" type="checkbox" name="favorite_ide[]" value="Sublime Text" />
+
                         <label for="sub">Sublime Text</label>
                     </td>
                 </tr>
                 <tr>
                     <td> </td>
                     <td>
-                        <input id="es" type="checkbox" name="favorite_ide" value="Esclipse" />
+                        <input id="es" type="checkbox" name="favorite_ide[]" value="Esclipse" />
                         <label for="es">Esclipse</label>
                     </td>
                 </tr>
                 <tr>
                     <td> </td>
                     <td>
-                        <input id="atom" type="checkbox" name="favorite_ide" value="Atom" />
+                        <input id="atom" type="checkbox" name="favorite_ide[]" value="Atom" />
                         <label for="atom">Atom</label>
                     </td>
                 </tr>
                 <tr>
                     <td> </td>
                     <td>
-                        <input id="intetlij" type="checkbox" name="favorite_ide" value="Intelij Idea" />
+                        <input id="intetlij" type="checkbox" name="favorite_ide[]" value="Intelij Idea" />
                         <label for="intetlij">Intelij Idea</label>
                     </td>
                 </tr>
@@ -101,7 +102,7 @@
                 </tr>
                 <tr>
                     <td><label for="message">Message</label></td>
-                    <td> <textarea name="message" id="message"></textarea> </td>
+                    <td> <textarea name="message" id="message" cols="30" rows="10"></textarea> </td>
                 </tr>
                 <tr>
                     <td></td>
