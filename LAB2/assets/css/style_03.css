@@ -18,7 +18,8 @@
 .inner-wrap{
     display: flex;
     justify-content:space-between;
-   
+ 
+    
 }
 .inner-box{
     display: flex;
@@ -42,7 +43,7 @@
     margin-top:45px ;
     margin-left: 0px;
     margin-right: 0px;
-    
+    padding-inline:  15px;
 }
 .section3 .text{
     width: 100%;
@@ -56,7 +57,7 @@
     text-align: center;
     margin-top: 20px;
     padding: 20px 15px;
-    /* width: 100%; */
+
     margin-inline: 15px;
     height: auto;
     color: white;
@@ -83,7 +84,7 @@
 }
 @media (max-width: 1159.98px) {
     .inner-wrap{
-        display: block;
+        flex-wrap: wrap;
     }
     .section4{
         margin-left: 20px;

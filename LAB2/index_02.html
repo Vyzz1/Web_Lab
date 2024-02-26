@@ -1,86 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=s, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style_02.css" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="container">
-        <div class="inner-wrap">
-
-            <div class="box">
-                <form method="post">
-                    <div class="data-section">
-                        <label for="name"> Your Name </label>
-                        <input class="input" type="text" placeholder="Full name" id="name" name="name" />
-                    </div>
-                    <div class="data-section">
-                        <label for="mail"> Email address </label>
-                        <input class="input" type="email" placeholder="Email" id="mail" name="mail" />
-                        <div class="error"> Email is not valid </div>
-
-                    </div>
-                    <div class="data-section">
-                        <label for="birthday"> Birthday </label>
-                        <input class="input" type="date" placeholder="Email" id="birthday" name="birthday" />
-                    </div>
-                    <div class="data-section">
-                        <label for="birthtime"> Birthtime </label>
-                        <input class="input" type="time" id="birthtime" name="birthtime" />
-                    </div>
-                    <div class="data-section">
-                        <label> Gender </label>
-                        <div class="gender">
-                            <input class="input" type="radio" id="gender1" name="gender" />
-                            <label for="gender1">Male</label>
-
-                            <input class="input" type="radio" id="gender2" name="gender" />
-                            <label for="gender2">Female</label>
-
-                        </div>
-                    </div>
-                    <div class="data-section">
-                        <label for="country">Country </label>
-                        <select class="input" name="country" id="country">
-                            <option disabled selected>Select a country</option>
-                            <optgroup label="Asia">
-                                <option value="Vietnam">Vietnam</option>
-                                <option value="Laos">Laos</option>
-                                <option value="Cambodia">Cambodia</option>
-                                <option value="Singapore">Singapore</option>
-                            </optgroup>
-                            <optgroup label="Europe">
-                                <option value="France">France</option>
-                                <option value="Belgium">Belgium</option>
-                                <option value="Italy">Italy</option>
-                                <option value="Finland">Finland</option>
-                                <option value="Ireland">Ireland</option>
-                            </optgroup>
-                        </select>
-                        <div class="error">Please select a country </div>
-
-                    </div>
-                    <div class="data-section">
-                        <label for="TOEIC"> TOEIC </label>
-                        <input class="input" type="range" step="5" min="50" max="990" placeholder="Full name" id="TOEIC"
-                            name="TOEIC" />
-                    </div>
-                    <div class="button">
-                        <button class="button reg">Register</button>
-                        <button class="button res">Reset</button>
-
-                    </div>
-                </form>
+      <div class="inner-wrap">
+        <div class="box">
+          <form method="post">
+            <div class="data-section">
+              <label for="name"> Your Name </label>
+              <input
+                class="input"
+                type="text"
+                placeholder="Full name"
+                id="name"
+                name="name"
+              />
             </div>
+            <div class="data-section">
+              <label for="mail"> Email address </label>
+              <input
+                class="input"
+                type="email"
+                placeholder="Email"
+                id="mail"
+                name="mail"
+              />
+              <div class="error">Email is not valid</div>
+            </div>
+            <div class="data-section">
+              <label for="birthday"> Birthday </label>
+              <input
+                class="input"
+                type="date"
+                placeholder="Email"
+                id="birthday"
+                name="birthday"
+              />
+            </div>
+            <div class="data-section">
+              <label for="birthtime"> Birthtime </label>
+              <input
+                class="input"
+                type="time"
+                id="birthtime"
+                name="birthtime"
+              />
+            </div>
+            <div class="data-section">
+              <label> Gender </label>
+              <div class="gender">
+                <input class="input" type="radio" id="gender1" name="gender" />
+                <label for="gender1">Male</label>
 
+                <input class="input" type="radio" id="gender2" name="gender" />
+                <label for="gender2">Female</label>
+              </div>
+            </div>
+            <div class="data-section">
+              <label for="country">Country </label>
+              <select class="input" name="country" id="country">
+                <option disabled selected>Select a country</option>
+                <optgroup label="Asia">
+                  <option value="Vietnam">Vietnam</option>
+                  <option value="Laos">Laos</option>
+                  <option value="Cambodia">Cambodia</option>
+                  <option value="Singapore">Singapore</option>
+                </optgroup>
+                <optgroup label="Europe">
+                  <option value="France">France</option>
+                  <option value="Belgium">Belgium</option>
+                  <option value="Italy">Italy</option>
+                  <option value="Finland">Finland</option>
+                  <option value="Ireland">Ireland</option>
+                </optgroup>
+              </select>
+              <div class="error">Please select a country</div>
+            </div>
+            <div class="data-section">
+              <label for="TOEIC"> TOEIC </label>
+              <input
+                class="input"
+                type="range"
+                step="5"
+                min="50"
+                max="990"
+                placeholder="Full name"
+                id="TOEIC"
+                name="TOEIC"
+              />
+            </div>
+            <div class="button">
+              <button class="button reg">Register</button>
+              <button class="button res" type="reset">Reset</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
-
-</body>
-
+  </body>
 </html>
