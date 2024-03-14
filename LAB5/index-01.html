@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #color-palette {
+        width: 400px;
+        height: 400px;
+        border: 1px solid salmon;
+        background: #ffffff;
+      }
+      .color-cell {
+        float: left;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+      #message {
+        padding: 25px;
+        position: absolute;
+        border: 8px;
+        width: 350px;
+        height: 25px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        background: #ccc;
+        text-align: center;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .title {
+        padding: 25px;
+        border-radius: 8px;
+        width: 350px;
+        height: 25px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        bottom: 10px;
+        background-color: #697277; /* Set your desired default color */
+        text-align: center;
+        z-index: 10; /* Ensure the title is above the background changes */
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2 class="title">Hover a cell</h2>
+
+      <div id="color-palette"></div>
+      <div id="message">Background has changed !</div>
+      <div
+        id="div1"
+        style="width: 80px; height: 80px; display: none; background: red"
+      ></div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      const generateColor = () => {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      };
+      let originalBackgroundColor = $("body").css("background-color");
+      let originalTitleText = $("#message").text();
+
+      for (var i = 0; i < 16; i++) {
+        $("#color-palette").append(
+          $('<div class="color-cell"></div>').css(
+            "background-color",
+            generateColor()
+          )
+        );
+      }
+      $(".color-cell").mouseenter(function () {
+        $("body").css("background-color", $(this).css("background-color"));
+
+        $(".title").text($(this).css("background-color"));
+      });
+      $(".color-cell").mouseleave(function () {
+        $(".title").text(originalBackgroundColor);
+        $("body").css("background-color", originalBackgroundColor);
+      });
+      $(".color-cell").click(function () {
+        originalBackgroundColor = $(this).css("background-color");
+        $("body").css("background-color", $(this).css("background-color"));
+        $("body");
+        $("#message").fadeIn();
+        $("#message").fadeOut(3000);
+      });
+      $(".title").click(function () {
+        var $temp = $("<input>");
+        $("body").append($temp);
+
+        $temp.val($(this).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+
+        $("#message").text("Color has been copied to clipboard");
+        $("#message").fadeIn();
+        $("#message").fadeOut(3000);
+        setTimeout(() => {
+          $("#message").text(originalTitleText);
+        }, 3200);
+      });
+    });
+  </script>
+</html>

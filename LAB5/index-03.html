@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      #box1 {
+        width: 432px;
+        height: 432px;
+        margin-top: 50px;
+
+        padding: 0;
+      }
+      .inner-box1 {
+        width: 144px;
+        height: 144px;
+        border: 1px solid #ccc;
+        float: left;
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+          rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+      }
+      #box2 {
+        width: 720px;
+        height: 288px;
+        padding: 0;
+      }
+      .inner-box2 {
+        float: left;
+        width: 144px;
+        height: 144px;
+        border: 1px solid #ccc;
+        float: left;
+
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+          rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+      }
+      .inner-box2 img {
+        object-fit: cover;
+        aspect-ratio: 1/1;
+        width: 100%;
+
+        height: 100%;
+      }
+      .inner-box1 img {
+        object-fit: cover;
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div id="box1"></div>
+      </div>
+      <br />
+      <br />
+      <div class="row">
+        <div id="box2"></div>
+      </div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    function allowDrop(event) {
+      event.preventDefault();
+    }
+
+    function drag(event) {
+      event.dataTransfer.setData("text", event.target.id);
+    }
+    function checkPuzzleCompletion() {
+      var isComplete = true;
+      $(".inner-box").each(function () {
+        var currentPos = $(this).index();
+        var correctPos = $(this).data("correct-position");
+        if (currentPos !== correctPos) {
+          isComplete = false;
+          return false; // This exits the .each() loop
+        }
+      });
+      return isComplete;
+    }
+
+    // Call this function after the drop event to check if the puzzle is complete
+    function afterDrop() {
+      if (checkPuzzleCompletion()) {
+        // Display the greeting message
+        alert("Congratulations! You've completed the puzzle!");
+      }
+    }
+    function drop(event) {
+      event.preventDefault();
+      var data = event.dataTransfer.getData("text");
+      var draggableElement = document.getElementById(data);
+      var dropzone = event.target;
+
+      // If the dropzone is an .inner-box, we append the draggableElement.
+      // If the dropzone is the container (but not an .inner-box), we append to the container itself.
+      // This allows us to drop items back and forth.
+      if (dropzone.className.indexOf("inner-box") > -1) {
+        dropzone.appendChild(draggableElement);
+      } else if (dropzone.id === "box1" || dropzone.id === "box2") {
+        dropzone.appendChild(draggableElement);
+      }
+    }
+
+    $(document).ready(function () {
+      for (let i = 0; i < 9; i++) {
+        $("#box1").append(
+          '<div class="inner-box inner-box1" correct-position= ' +
+            i +
+            '(+ ondrop="drop(event)" ondragover="allowDrop(event)"></div>'
+        );
+      }
+      function randomRotate() {
+        let arr = [0, 90, 180, 270];
+        let index = Math.floor(Math.random() * arr.length);
+        return arr[index];
+      }
+      for (let i = 0; i < 10; i++) {
+        $("#box2").append(
+          '<div class="inner-box  inner-box2" ondrop="drop(event)" ondragover="allowDrop(event)">' +
+            '<img id="drag-img-' +
+            i +
+            '" draggable="true" ondragstart="drag(event)" src="./images/cntt_' +
+            ("0" + (i + 1)).slice(-2) +
+            '.gif"></div>'
+        );
+      }
+      $(".inner-box2 img").each(function () {
+        let random = randomRotate();
+        $(this).css("transform", "rotate(" + random + "deg)");
+        $(this).data("rotate", random);
+      });
+
+      $(".inner-box img").click(function () {
+        const rotateValue = $(this).data("rotate");
+        const degrees = rotateValue + 90 > 270 ? 0 : rotateValue + 90;
+        $(this).css("transform", "rotate(" + degrees + "deg)");
+        $(this).data("rotate", degrees);
+      });
+      $(".inner-box1")
+        .prop("draggable", true)
+        .on("dragstart", function (e) {
+          e.originalEvent.dataTransfer.setData("text", e.target.id);
+        });
+
+      $(".inner-box1").each(function (i) {
+        $(this).attr("id", "drop-box-" + i);
+      });
+
+      // Make sure the box1 and box2 containers can also receive drops
+      $("#box1, #box2").on("drop", drop).on("dragover", allowDrop);
+    });
+  </script>
+</html>

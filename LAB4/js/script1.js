@@ -7,6 +7,9 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   let email = e.target.email.value;
   let pwd = e.target.password.value;
+  if ((email === "" && pwd === "") || (email === null && pwd === null)) {
+    alert("Nhập thông tin");
+  }
   if (email === "") {
     errorMessage.innerHTML = "Please enter your email";
     emailHTML.focus();
